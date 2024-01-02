@@ -23,12 +23,33 @@ export class ContactFormComponent {
   phno = new FormControl("", Validators.required);
   message = new FormControl("", Validators.required);
 
+  markAllFieldsAsTouched() {
+    this.name.markAsTouched();
+    this.email.markAsTouched();
+    this.phno.markAsTouched();
+    this.message.markAsTouched();
+  }
+
+
   submit() {
+    this.markAllFieldsAsTouched();
     if (this.name.valid && this.email.valid && this.phno.valid && this.message.valid) {
       this.isErr = false;
       alert("Contact details are submitted.");
     } else {
       this.isErr = true;
+      if (!this.name.valid) {
+        this.name.setErrors({ 'required': true });
+      }
+      if (!this.email.valid) {
+        this.email.setErrors({ 'required': true, 'email': true });
+      }
+      if (!this.phno.valid) {
+        this.phno.setErrors({ 'required': true });
+      }
+      if (!this.message.valid) {
+        this.message.setErrors({ 'required': true });
+      }
     }
   }
 }
