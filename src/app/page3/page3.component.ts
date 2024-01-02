@@ -10,4 +10,11 @@ import { ButtonComponent } from '../button/button.component';
 })
 export class Page3Component {
 
+  submit() {
+    // throw new Error('Method not implemented.');
+
+    alert("Page 3 button clicked");
+
+  }
+
 }

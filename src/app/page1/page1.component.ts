@@ -9,5 +9,11 @@ import { ButtonComponent } from '../button/button.component';
   styleUrl: './page1.component.css'
 })
 export class Page1Component {
+  submit() {
+    // throw new Error('Method not implemented.');
+
+    alert("Page 1 button clicked");
+
+  }
 
 }
